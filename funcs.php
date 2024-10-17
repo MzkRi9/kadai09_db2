@@ -7,11 +7,10 @@ function h($str){
 //DB接続関数：db_conn()
 function db_conn(){
     try {
-        $db_name = "ren_playlist"; //デプロイの時に"flowersknives_php_kadai"に変更
-        $db_id = "root"; //デプロイの時に"flowersknives_php_kadai"に変更
-        $db_pw = ""; //MAMPPだったらroot。デプロイの時に"php_kadai"に変更
-        $db_host = "localhost"; //デプロイの時に"mysql80.flowersknives.sakura.ne.jp"に変更
-        //$pdo = new PDO('mysql:dbname=ren_playlist;charset=utf8;host=localhost','root','');
+        $db_name = "ren_playlist";
+        $db_id = "root";
+        $db_pw = "";
+        $db_host = "localhost";
         return new PDO('mysql:dbname='.$db_name.';charset=utf8;host='.$db_host, $db_id, $db_pw);
     } catch (PDOException $e) {
         exit('DB_CONECT:'.$e->getMessage()); 
